@@ -1,0 +1,44 @@
+#------------------------------------------------
+
+Output "Output.ppm" 800 600 255 200 200 255
+
+#------------------------------------------------
+
+Read "Images\Building.ppm"
+
+Translate  100  180
+Scale        2    2
+Copy
+
+#------------------------------------------------
+
+Read "Images\Animals.ppm"
+
+Reset
+
+Translate   70    50
+Scale        0.5   0.5
+Copy
+
+Scale        2     2
+Translate  250     0
+Rotate      15
+Scale        0.8   0.8
+Copy
+
+Scale        1.25  1.25
+Rotate     -15
+Translate  250     0
+Shear        0.2   0
+Scale        0.5   0.5
+Copy
+
+#------------------------------------------------
+
+Reset
+
+Translate  120  265     Copy
+Translate  140   50     Copy
+Translate  140   50     Copy
+
+#------------------------------------------------

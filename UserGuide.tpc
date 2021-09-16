@@ -1,0 +1,74 @@
+#------------------------------------------------------------------------------
+# Temizer Photo Collage (TPC) File
+#
+# Description and examples of available commands
+#
+# Notes:
+# ------
+#
+# - Input-output related  commands: Output, Read, Copy
+#   Affine transformation commands: Translate, Rotate, Scale, Shear, Reset
+#
+# - Comments start with '#' character, and last until the end of line.
+#
+# - Commands will be processed in the given order.
+#
+# - There should be only one "Output" command (output file),
+#   but there can be multiple "Read" commands (input files).
+#
+# - The "Output" command does not have to be the first command,
+#   but it needs to come before the first "Copy" command.
+#
+# - A "Read" command does not have to be the first command,
+#   but it needs to come before the first "Copy" command.
+#
+#------------------------------------------------------------------------------
+# Output                 : Set the output file and output specifications
+#   "<Output PPM File>"  : String  , Output PPM file path/name in double quotes
+#   <Width>              : Integer , Width  in pixels
+#   <Height>             : Integer , Height in pixels
+#   <MaxColorValue>      : Integer , Maximum color value of PPM image
+#   <Red> <Green> <Blue> : Integers, Components of the background color
+
+Output "Output.ppm"      # There can be comments and whitespaces between tokens
+       800               # Width
+       600               # Height
+       255               # Maximum color value
+       255 255 255       # R,G,B of background color
+#------------------------------------------------------------------------------
+# Read                   : Read a source image
+#   "<Input PPM File>"   : String, Input PPM file path/name in double quotes
+
+Read "Images\Animals.ppm"
+#------------------------------------------------------------------------------
+# Copy                   : Copy transformed input image onto the output image
+
+Copy
+#------------------------------------------------------------------------------
+# Translate              : Affine transformation (Translate)
+#   <Tx>                 : Double, Translation amount in x direction
+#   <Ty>                 : Double, Translation amount in y direction
+
+Translate 200 100
+#------------------------------------------------------------------------------
+# Rotate                 : Affine transformation (Rotate)
+#   <Theta>              : Double, Clockwise rotation amount in degrees
+
+Rotate 30
+#------------------------------------------------------------------------------
+# Scale                  : Affine transformation (Scale)
+#   <Sx>                 : Double, Scaling coefficient along x direction
+#   <Sy>                 : Double, Scaling coefficient along y direction
+
+Scale 1 0.7
+#------------------------------------------------------------------------------
+# Shear                  : Affine transformation (Shear)
+#   <Sxy>                : Double, Shear coefficient of x (along y axis)
+#   <Syx>                : Double, Shear coefficient of y (along x axis)
+
+Shear 0.5 0
+#------------------------------------------------------------------------------
+# Reset                  : Reset affine transformation matrix to identity
+
+Reset
+#------------------------------------------------------------------------------
